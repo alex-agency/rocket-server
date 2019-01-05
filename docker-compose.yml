@@ -1,0 +1,28 @@
+version: "3.7"
+
+services:
+  server:
+    build:
+      context: ./
+    links:
+      - db
+    ports:
+      - 8080:8080
+    environment:
+      - APP_ENV=${APP_ENV}
+      - DB_HOST=${REDIS_HOST}
+      - DB_NAME=${REDIS_DB}
+      - DB_USER=${REDIS_USER}
+      - DB_PASSWORD=${REDIS_PASSWORD}
+      - PORT=${DOCKER_GOLANG_PORT}
+      - REDIS_HOST=${DOCKER_REDIS_HOST}
+      - REDIS_PORT=${DOCKER_REDIS_PORT}
+    depends_on:
+     - db
+
+  db: 
+    image: redis:4
+    ports:
+      - "${REDIS_SHARED_PORT}:${DOCKER_REDIS_PORT}"
+    volumes:
+      - ./data:/data
