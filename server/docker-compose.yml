@@ -1,0 +1,23 @@
+version: "3.7"
+services:
+  users:
+    build:
+      context: .
+      dockerfile: users/Dockerfile
+    restart: always
+    volumes:
+    - .:/go/src/rocket-server/server
+    container_name: users
+    ports:
+    - 8800:8081
+    depends_on:
+    - redisdb
+  redis:
+    command: mongod --smallfiles --logpath=/dev/null
+    container_name: redisdb
+    environment:
+    - REDIS_DATA_DIR=/data/db
+    - REDIS_LOG_DIR=/dev/null
+    image: redis:4
+    ports:
+    - 6379:6379
