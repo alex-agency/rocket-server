@@ -1,8 +1,8 @@
 hash: 8af75fcc56599ba6825c196135703899dd944c1c1f6fe16859a48f86cc359744
-updated: 2019-01-07T08:48:33.840493+02:00
+updated: 2019-01-08T16:07:12.9827686+02:00
 imports:
 - name: github.com/apache/thrift
-  version: 93e8ec2d6a372cd6f68b7c11508ff7f8ea043f08
+  version: e824efcb7935e019998264b8982ad5e51858879e
   subpackages:
   - lib/go/thrift
 - name: github.com/beorn7/perks
@@ -36,14 +36,13 @@ imports:
 - name: github.com/go-logfmt/logfmt
   version: 07c9b44f60d7ffdfb7d8efe1ad539965737836dc
 - name: github.com/go-redis/redis
-  version: 7f89fbac80bcc62ce920b6dbc6ca60238d7725d1
+  version: 22be8a3eaf992c828cecb69dc07348313bf08d2e
   subpackages:
   - internal
   - internal/consistenthash
   - internal/hashtag
   - internal/pool
   - internal/proto
-  - internal/singleflight
   - internal/util
 - name: github.com/gogo/protobuf
   version: 8e4a75f11384d0fb2188d872d456407e41f33fc0
@@ -67,6 +66,8 @@ imports:
   version: 7e0847f9db758cdebd26c149d0ae9d5d0b9c98ce
 - name: github.com/gorilla/mux
   version: e3702bed27f0d39777b0b37b664b6280e8ef8fbf
+- name: github.com/konsorten/go-windows-terminal-sequences
+  version: 5c8c8bd35d3832f5d134ae1e1e375b69a4d25242
 - name: github.com/kr/logfmt
   version: b84e30acd515aadc4b783ad4ff83aff3299bdfe0
 - name: github.com/lightstep/lightstep-tracer-go
@@ -126,7 +127,7 @@ imports:
   subpackages:
   - go
 - name: github.com/prometheus/common
-  version: b1c43a6df3aedba268353d940b5974f05037ed5c
+  version: 2998b132700a7d019ff618c06a234b47c1f3f681
   subpackages:
   - expfmt
   - internal/bitbucket.org/ww/goautoneg
@@ -140,9 +141,15 @@ imports:
 - name: github.com/rcrowley/go-metrics
   version: 3113b8401b8a98917cde58f8bbd42a1b1c03b1fd
 - name: github.com/Shopify/sarama
-  version: bb6b5baaf18c899a7bab84baf62f3f6a2716b24f
+  version: c7079fe6bf6de275f252e68ec5a403347251393d
+- name: github.com/Sirupsen/logrus
+  version: eef6b768ab01a0598a0a6db97bad2a37d31df1d1
+- name: golang.org/x/crypto
+  version: ff983b9c42bc9fbf91556e191cc8efb585c16908
+  subpackages:
+  - ssh/terminal
 - name: golang.org/x/net
-  version: 927f97764cc334a6575f4b7a1584a147864d5723
+  version: 45ffb0cd1ba084b73e26dee67e667e1be5acce83
   subpackages:
   - context
   - http/httpguts
@@ -152,9 +159,10 @@ imports:
   - internal/timeseries
   - trace
 - name: golang.org/x/sys
-  version: 1775db3f06b568179d273425900dd09125831dd5
+  version: 7fbe1cd0fcc20051e1fcb87fbabec4a1bacaaeba
   subpackages:
   - unix
+  - windows
 - name: golang.org/x/text
   version: e6919f6577db79269a6443b9dc46d18f2238fb5d
   subpackages:
@@ -168,7 +176,7 @@ imports:
   - googleapis/api/annotations
   - googleapis/rpc/status
 - name: google.golang.org/grpc
-  version: c71aa62423b37215980f9c3141eef06f4c35e998
+  version: 0a391ff2b775475d1105422656eb65b21d66c067
   subpackages:
   - balancer
   - balancer/base
@@ -201,7 +209,7 @@ imports:
   - status
   - tap
 - name: sourcegraph.com/sourcegraph/appdash
-  version: 4c381bd170b46de54530ae6170358c98fdaa515f
+  version: d9ea5c54f7dc06dbdbbf854ec35176e520e6dfdf
   subpackages:
   - internal/wire
   - opentracing
