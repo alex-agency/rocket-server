@@ -17,7 +17,9 @@ services:
       context: ./
       dockerfile: users/Dockerfile
     volumes:
-      - "./:/go/src/rocket-server/server"
+      - type: "bind"
+        source: "./"
+        target: "/go/src/rocket-server/server"
     ports:
       - 8080:8080
       - 8081:8081
